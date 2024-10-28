@@ -32,14 +32,14 @@ public:
         return elem[i];
     }
 
-    friend Matrix operator+(Matrix& a, Matrix& b){
-        if(a.r!=b.r || a.c!=b.c)
+    Matrix operator+(Matrix& b){
+        if(r!=b.r || c!=b.c)
             throw "please make sure 2 matrice with same size";
         
-        Matrix res(a.r, a.c);
-        for(int i=0; i<a.r; ++i){
-            for(int j=0; j<a.c; ++j){
-                res[i][j] = a[i][j]+b[i][j];
+        Matrix res(r, c);
+        for(int i=0; i<r; ++i){
+            for(int j=0; j<c; ++j){
+                res[i][j] = elem[i][j]+b[i][j];
             }
         }
         return res;
@@ -69,6 +69,7 @@ private:
 int main(){
     Matrix mat(3, 5);
     Matrix mat2(3, 5);
+    mat[1][0] = 5;
     std::cout<< mat;
     std::cout<< mat.row()<< "\n";
     std::cout<< mat.col()<< "\n";
