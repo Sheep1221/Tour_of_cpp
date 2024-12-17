@@ -15,6 +15,7 @@ int count(const C& c, P pred){
 
 int main(){
     std::vector<int> vec = {10, 2, 3, 4, 5, 1, 6};
+    // We can use the lambda to replace the function object
     std::cout<< count(vec, [&](int x){return x>3;})<< "\n";
 
     return 0;
