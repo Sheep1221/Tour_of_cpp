@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// push back in C language
 void push_back(int** vec, int* size, int val){
     (*size)++;
     int *temp = (int*)realloc(*vec, (*size)*sizeof(int));
@@ -16,10 +17,11 @@ void push_back(int** vec, int* size, int val){
 
 int main(){
     int* arr;
-    int* vec = NULL;
+    int* vec;
     int size = 0;
     int i = 0;
     arr = malloc(5*sizeof(int));
+    vec = malloc(0); // remember to malloc vec before realloc
 
     for(i=0; i<5; ++i){
         arr[i] = i*10;
